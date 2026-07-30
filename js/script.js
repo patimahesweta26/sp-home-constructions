@@ -107,10 +107,20 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 
   const name = this.querySelector('input[type="text"]').value;
   const phone = this.querySelector('input[type="tel"]').value;
+  const email = this.querySelector('input[type="email"]').value;
+  const service = this.querySelector('select').value;
   const msg = this.querySelector('textarea').value;
 
-  const text = `Hi SP Home Constructions! I'm ${name} (${phone}). ${msg ? 'Message: ' + msg : 'I\'m interested in your services.'}`;
+  // Save to Google Sheet (replace URL after deploying Apps Script)
+  fetch('YOUR_APPS_SCRIPT_WEBHOOK_URL', {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, phone, email, service, message: msg })
+  }).catch(() => {});
 
+  // Open WhatsApp
+  const text = `Hi SP Home Constructions! I'm ${name} (${phone}). ${msg ? 'Message: ' + msg : "I'm interested in your services."}`;
   window.open(`https://wa.me/919937994806?text=${encodeURIComponent(text)}`, '_blank');
 
   btn.innerHTML = orig;
