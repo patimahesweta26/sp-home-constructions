@@ -111,10 +111,9 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   const service = this.querySelector('select').value;
   const msg = this.querySelector('textarea').value;
 
-  // Save to Google Sheet (replace URL after deploying Apps Script)
-  fetch('YOUR_APPS_SCRIPT_WEBHOOK_URL', {
+  // Save to spreadsheet via FormSubmit.co
+  fetch('https://formsubmit.co/ajax/patimahesweta26@gmail.com', {
     method: 'POST',
-    mode: 'no-cors',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name, phone, email, service, message: msg })
   }).catch(() => {});
