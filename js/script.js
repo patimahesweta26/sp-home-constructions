@@ -59,7 +59,7 @@ function animateCounter(element) {
 }
 
 // Intersection Observer for stats
-const statsSection = document.querySelector('.contact-stats');
+const statsSection = document.querySelector('.hero-stats');
 let statsAnimated = false;
 
 const statsObserver = new IntersectionObserver((entries) => {
