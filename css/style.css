@@ -92,6 +92,11 @@ img {
   letter-spacing: -0.3px;
 }
 
+.nav {
+  display: flex;
+  align-items: center;
+}
+
 .nav ul {
   display: flex;
   list-style: none;
@@ -116,7 +121,8 @@ img {
   border: none;
   cursor: pointer;
   padding: 4px;
-  z-index: 2;
+  position: relative;
+  z-index: 101;
 }
 
 .hamburger span {
@@ -926,7 +932,7 @@ img {
     background: rgba(0,0,0,0.4);
     transition: none;
     box-shadow: none;
-    z-index: 1;
+    z-index: 100;
     pointer-events: none;
   }
 
