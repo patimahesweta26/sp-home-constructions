@@ -12,18 +12,26 @@ window.addEventListener('scroll', () => {
 const hamburger = document.getElementById('hamburger');
 const nav = document.getElementById('nav');
 
+function closeNav() {
+  hamburger.classList.remove('active');
+  nav.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
   nav.classList.toggle('active');
   document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
 });
 
+// Close when clicking nav backdrop
+nav.addEventListener('click', (e) => {
+  if (e.target === nav) closeNav();
+});
+
+// Close on link click
 document.querySelectorAll('.nav a').forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    nav.classList.remove('active');
-    document.body.style.overflow = '';
-  });
+  link.addEventListener('click', closeNav);
 });
 
 // Animated counter

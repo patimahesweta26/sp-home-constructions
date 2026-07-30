@@ -902,7 +902,7 @@ img {
   transform: translateY(0);
 }
 
-/* Responsive */
+/* Mobile-first responsive */
 @media (max-width: 1024px) {
   .hero-content h1 {
     font-size: 2.8rem;
@@ -944,60 +944,129 @@ img {
 }
 
 @media (max-width: 768px) {
+  /* Navigation */
   .nav {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 270px;
+    width: 100%;
     height: 100vh;
-    background: #fff;
-    padding: 90px 36px 36px;
-    transition: right 0.3s ease;
-    box-shadow: -8px 0 32px rgba(0,0,0,0.08);
-  }
-
-  .nav.active {
-    right: 0;
+    background: rgba(0,0,0,0.4);
+    transition: none;
+    box-shadow: none;
+    z-index: 1;
+    pointer-events: none;
   }
 
   .nav ul {
+    position: absolute;
+    top: 0;
+    right: -280px;
+    width: 280px;
+    height: 100vh;
+    background: #fff;
+    padding: 90px 32px 32px;
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
+    transition: right 0.3s ease;
+    box-shadow: -4px 0 24px rgba(0,0,0,0.1);
+  }
+
+  .nav.active {
+    pointer-events: all;
+  }
+
+  .nav.active ul {
+    right: 0;
   }
 
   .nav a {
-    font-size: 1rem;
+    font-size: 1.05rem;
+    display: block;
+    padding: 8px 0;
   }
 
   .hamburger {
     display: block;
   }
 
+  /* Hero */
+  .hero {
+    min-height: 90vh;
+  }
+
   .hero-content {
-    padding: 100px 0 40px;
+    padding: 100px 0 20px;
+    max-width: 100%;
   }
 
   .hero-content h1 {
     font-size: 2rem;
+    letter-spacing: -0.3px;
   }
 
   .hero-content p {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
+    max-width: 100%;
+    margin-bottom: 28px;
+  }
+
+  .hero-badge {
+    font-size: 0.72rem;
+    padding: 6px 16px;
+    margin-bottom: 20px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .hero-stats {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin: 0 16px -60px;
+    margin: -40px 16px 0;
+    border-radius: 8px;
+  }
+
+  .hero-stats .stat {
+    padding: 16px 12px;
   }
 
   .hero-stats .stat:nth-child(2)::after {
     display: none;
   }
 
+  .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+  }
+
+  .hero-overlay {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 92%);
+  }
+
+  /* About */
   .about-grid,
   .contact-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 32px;
+  }
+
+  .about-image-main img {
+    height: 280px;
   }
 
   .about-image-accent {
@@ -1008,58 +1077,370 @@ img {
     font-size: 1.5rem;
   }
 
+  .about-text p {
+    font-size: 0.92rem;
+  }
+
   .about-features {
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 20px;
   }
 
-  .services-grid,
-  .projects-grid,
+  .feature {
+    font-size: 0.88rem;
+  }
+
+  /* Services */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .service-card {
+    padding: 28px 20px;
+    text-align: left;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .service-icon {
+    margin: 0;
+    width: 48px;
+    height: 48px;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .service-card h3 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+
+  .service-card p {
+    font-size: 0.85rem;
+  }
+
+  /* Projects */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .project-card {
+    aspect-ratio: 16 / 9;
+    border-width: 3px;
+  }
+
+  .project-overlay {
+    opacity: 1;
+    background: linear-gradient(to top, rgba(15,43,70,0.85) 0%, transparent 40%);
+    padding: 20px;
+  }
+
+  .project-overlay h3 {
+    font-size: 1rem;
+  }
+
+  /* Testimonials */
   .testimonials-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 
-  .section-header h2 {
-    font-size: 1.6rem;
+  .testimonial-card {
+    padding: 24px;
+  }
+
+  .testimonial-card > p {
+    font-size: 0.9rem;
+  }
+
+  /* CTA Banner */
+  .cta-banner {
+    padding: 56px 0;
   }
 
   .cta-banner h2 {
     font-size: 1.5rem;
   }
 
-  .form-row {
-    grid-template-columns: 1fr;
+  .cta-banner p {
+    font-size: 0.92rem;
+    margin-bottom: 28px;
   }
 
-  .footer-grid {
+  .cta-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cta-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Contact */
+  .contact-info h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-info > p {
+    font-size: 0.92rem;
+    margin-bottom: 24px;
+  }
+
+  .contact-details {
+    gap: 18px;
+  }
+
+  .contact-item {
+    gap: 12px;
+  }
+
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+
+  .contact-item h4 {
+    font-size: 0.85rem;
+  }
+
+  .contact-item p,
+  .contact-item a {
+    font-size: 0.85rem;
+  }
+
+  .contact-form {
+    padding: 24px;
+  }
+
+  .contact-form h3 {
+    font-size: 1.05rem;
+    margin-bottom: 18px;
+  }
+
+  .form-row {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 0;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    padding: 12px 14px;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+  }
+
+  /* Section spacing */
+  .section-header {
+    margin-bottom: 36px;
+  }
+
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .section-header p {
+    font-size: 0.9rem;
   }
 
   .section {
-    padding: 60px 0;
+    padding: 48px 0;
+  }
+
+  /* Map */
+  .map iframe {
+    height: 260px;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-bottom: 28px;
+  }
+
+  .footer {
+    padding: 40px 0 0;
+  }
+
+  .footer-logo {
+    font-size: 1rem;
+  }
+
+  .footer-brand p {
+    font-size: 0.85rem;
+  }
+
+  .footer-links h4,
+  .footer-contact h4 {
+    font-size: 0.75rem;
+    margin-bottom: 14px;
+  }
+
+  .footer-links li {
+    margin-bottom: 8px;
+  }
+
+  .footer-links a,
+  .footer-contact p {
+    font-size: 0.85rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.75rem;
+    padding: 16px 0;
   }
 }
 
 @media (max-width: 480px) {
+  .header .container {
+    height: 60px;
+    padding: 0 16px;
+  }
+
+  .logo-mark {
+    width: 32px;
+    height: 32px;
+    font-size: 0.7rem;
+  }
+
+  .logo-text {
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    min-height: 85vh;
+  }
+
+  .hero-content {
+    padding: 80px 0 10px;
+  }
+
   .hero-content h1 {
     font-size: 1.6rem;
   }
 
-  .hero-actions {
-    flex-direction: column;
+  .hero-content p {
+    font-size: 0.85rem;
+    margin-bottom: 24px;
+  }
+
+  .hero-badge {
+    font-size: 0.65rem;
+    padding: 4px 12px;
+    margin-bottom: 16px;
+  }
+
+  .hero-actions .btn {
+    font-size: 0.85rem;
+    padding: 12px 24px;
+  }
+
+  .hero-stats {
+    margin: -32px 12px 0;
+    border-radius: 6px;
+  }
+
+  .hero-stats .stat {
+    padding: 12px 8px;
+  }
+
+  .stat-number {
+    font-size: 1.3rem;
+  }
+
+  .stat-label {
+    font-size: 0.65rem;
   }
 
   .btn {
     width: 100%;
     justify-content: center;
+    padding: 12px 24px;
+    font-size: 0.85rem;
   }
 
-  .cta-actions {
-    flex-direction: column;
+  .btn-lg {
+    padding: 14px 28px;
+  }
+
+  .about-image-main img {
+    height: 220px;
+  }
+
+  .about-text h2 {
+    font-size: 1.3rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .section {
+    padding: 36px 0;
+  }
+
+  .service-card {
+    padding: 20px 16px;
+  }
+
+  .service-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .service-card h3 {
+    font-size: 0.92rem;
+  }
+
+  .project-overlay h3 {
+    font-size: 0.9rem;
+  }
+
+  .project-overlay p {
+    font-size: 0.78rem;
+  }
+
+  .cta-banner {
+    padding: 40px 16px;
+  }
+
+  .cta-banner h2 {
+    font-size: 1.3rem;
+  }
+
+  .cta-banner p {
+    font-size: 0.85rem;
   }
 
   .contact-form {
-    padding: 24px;
+    padding: 20px 16px;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    padding: 10px 12px;
+    font-size: 0.82rem;
+  }
+
+  .map iframe {
+    height: 200px;
+  }
+
+  .whatsapp-float {
+    width: 48px;
+    height: 48px;
+    font-size: 1.2rem;
+    bottom: 16px;
+    right: 16px;
   }
 }
