@@ -207,35 +207,6 @@ img {
   flex-wrap: wrap;
 }
 
-/* Hero Stats */
-.hero-stats {
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  background: #fff;
-  box-shadow: var(--shadow-lg);
-  z-index: 2;
-}
-
-.hero-stats .stat {
-  padding: 28px 44px;
-  text-align: center;
-  position: relative;
-}
-
-.hero-stats .stat:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 32px;
-  width: 1px;
-  background: var(--border);
-}
-
 .stat-number {
   display: block;
   font-size: 2rem;
@@ -712,6 +683,39 @@ img {
   color: var(--blue);
 }
 
+/* Contact Stats (moved from hero) */
+.contact-stats {
+  display: flex;
+  gap: 12px;
+  padding: 16px 0 8px;
+  border-top: 1px solid var(--border);
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.contact-stat {
+  flex: 1;
+  min-width: 60px;
+  text-align: center;
+}
+
+.contact-stat .stat-number {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--navy);
+  display: block;
+  line-height: 1.2;
+}
+
+.contact-stat .stat-label {
+  font-size: 0.6rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-top: 2px;
+}
+
 /* Contact Form */
 .contact-form {
   background: var(--bg);
@@ -908,20 +912,6 @@ img {
     font-size: 2.8rem;
   }
 
-  .hero-stats {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    transform: none;
-    margin: 0 24px -60px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .hero-stats .stat {
-    padding: 20px 16px;
-  }
-
   .about-grid {
     gap: 48px;
   }
@@ -1025,25 +1015,6 @@ img {
   .hero-actions .btn {
     width: 100%;
     justify-content: center;
-  }
-
-  .hero-stats {
-    position: relative;
-    left: auto;
-    bottom: auto;
-    transform: none;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin: -40px 16px 0;
-    border-radius: 8px;
-  }
-
-  .hero-stats .stat {
-    padding: 16px 12px;
-  }
-
-  .hero-stats .stat:nth-child(2)::after {
-    display: none;
   }
 
   .stat-number {
@@ -1341,15 +1312,6 @@ img {
   .hero-actions .btn {
     font-size: 0.85rem;
     padding: 12px 24px;
-  }
-
-  .hero-stats {
-    margin: -32px 12px 0;
-    border-radius: 6px;
-  }
-
-  .hero-stats .stat {
-    padding: 12px 8px;
   }
 
   .stat-number {
