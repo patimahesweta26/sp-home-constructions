@@ -97,7 +97,10 @@ fadeElements.forEach(el => {
 });
 
 // Contact form
-document.getElementById('contactForm').addEventListener('submit', function(e) {
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+contactForm.addEventListener('submit', function(e) {
   e.preventDefault();
 
   const btn = this.querySelector('button');
@@ -151,3 +154,4 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   btn.disabled = false;
   this.reset();
 });
+}
