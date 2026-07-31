@@ -111,8 +111,8 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   const service = this.querySelector('select').value;
   const msg = this.querySelector('textarea').value;
 
-  // Save to spreadsheet via FormSubmit.co
-  fetch('https://formsubmit.co/ajax/patimahesweta26@gmail.com', {
+  // Save to Formspree spreadsheet
+  fetch('https://formspree.io/f/xgogbzrj', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name, phone, email, service, message: msg })
