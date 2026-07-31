@@ -111,12 +111,37 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   const service = this.querySelector('select').value;
   const msg = this.querySelector('textarea').value;
 
+  const formStatus = document.getElementById('formStatus');
+
   // Save to Formspree spreadsheet
   fetch('https://formspree.io/f/xgogbzrj', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name, phone, email, service, message: msg })
-  }).catch(() => {});
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify({
+      name,
+      phone,
+      email,
+      service,
+      message: msg,
+      _subject: 'New Enquiry - SP Home Constructions'
+    })
+  })
+    .then(res => res.json())
+    .then(() => {
+      if (formStatus) {
+        formStatus.textContent = 'Thank you! Your message has been sent.';
+        formStatus.className = 'form-status success';
+      }
+    })
+    .catch(() => {
+      if (formStatus) {
+        formStatus.textContent = 'Something went wrong. Please try again or WhatsApp us directly.';
+        formStatus.className = 'form-status error';
+      }
+    });
 
   // Open WhatsApp
   const text = `Hi SP Home Constructions! I'm ${name} (${phone}). ${msg ? 'Message: ' + msg : "I'm interested in your services."}`;
