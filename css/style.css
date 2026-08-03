@@ -241,8 +241,8 @@ img {
   right: 6%;
   top: 50%;
   transform: translateY(-50%);
-  width: clamp(260px, 26vw, 360px);
-  height: clamp(260px, 26vw, 360px);
+  width: clamp(280px, 29vw, 400px);
+  height: clamp(280px, 29vw, 400px);
   border-radius: 50%;
   overflow: hidden;
   border: 6px solid rgba(255, 92, 26, 0.95);
@@ -1834,8 +1834,8 @@ img {
     position: static;
     transform: none;
     margin: 0 auto 44px;
-    width: 220px;
-    height: 220px;
+    width: 260px;
+    height: 260px;
   }
 
   .hero-content h1 {
@@ -2267,8 +2267,8 @@ img {
   }
 
   .hero-photo {
-    width: 170px;
-    height: 170px;
+    width: 190px;
+    height: 190px;
     margin-bottom: 36px;
     border-width: 4px;
   }
