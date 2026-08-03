@@ -2,11 +2,40 @@
 const header = document.getElementById('header');
 let lastScroll = 0;
 
+// Scroll spy: highlight the nav link of the section currently in view
+// (runs on the homepage, where the sections below exist)
+const spySections = [
+  { id: 'hero', href: 'index.html' },
+  { id: 'about', href: 'about.html' },
+  { id: 'services', href: 'services.html' },
+  { id: 'projects', href: 'projects.html' },
+  { id: 'testimonials', href: 'contact.html' }
+].map(s => ({ ...s, el: document.getElementById(s.id) })).filter(s => s.el);
+
+const spyLinks = {};
+document.querySelectorAll('.nav a').forEach(a => {
+  spyLinks[a.getAttribute('href')] = a;
+});
+
+function updateSpy() {
+  if (!spySections.length) return;
+  let current = spySections[0];
+  for (const s of spySections) {
+    if (s.el.getBoundingClientRect().top <= 140) current = s;
+  }
+  document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
+  const target = spyLinks[current.href];
+  if (target) target.classList.add('active');
+}
+
 window.addEventListener('scroll', () => {
   const currentScroll = window.pageYOffset;
   header.classList.toggle('scrolled', currentScroll > 80);
   lastScroll = currentScroll;
 });
+
+window.addEventListener('scroll', updateSpy, { passive: true });
+updateSpy();
 
 // Mobile menu
 const hamburger = document.getElementById('hamburger');

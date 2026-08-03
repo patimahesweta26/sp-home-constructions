@@ -107,7 +107,7 @@
         </a>
         <nav class="nav" id="nav">
           <ul>
-            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="projects.html">Projects</a></li>
@@ -258,7 +258,7 @@
     </section>
 
     <!-- Projects Preview -->
-    <section class="section projects" id="projects">
+    <section class="section projects projects-dark" id="projects">
       <div class="container">
         <div class="section-header">
           <span class="section-label">Our Work</span>
@@ -472,6 +472,23 @@
     >
       <i class="fab fa-whatsapp"></i>
     </a>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+      <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous photo">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <figure class="lightbox-figure">
+        <img id="lightboxImg" src="" alt="" />
+        <figcaption id="lightboxCaption"></figcaption>
+      </figure>
+      <button class="lightbox-next" id="lightboxNext" aria-label="Next photo">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
 
     <script src="js/script.js"></script>
   </body>

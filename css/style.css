@@ -661,9 +661,9 @@ img {
   transform: translateX(4px);
 }
 
-/* Services (dark variant, homepage) */
+/* Services (light orange variant, homepage) */
 .services-dark {
-  background: var(--ink);
+  background: linear-gradient(180deg, #FFE7D1 0%, #FFD4AF 100%);
   position: relative;
   overflow: hidden;
 }
@@ -675,7 +675,7 @@ img {
   right: -120px;
   width: 520px;
   height: 520px;
-  background: radial-gradient(circle, rgba(255, 92, 26, 0.16) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(11, 14, 20, 0.06) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -688,11 +688,11 @@ img {
 }
 
 .services-dark .section-header h2 {
-  color: #fff;
+  color: var(--ink);
 }
 
 .services-dark .section-header p {
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--text-light);
 }
 
 .services-dark .service-card {
@@ -734,6 +734,45 @@ img {
 /* Projects */
 .projects {
   background: var(--white);
+}
+
+/* Projects (gray variant, homepage) */
+.projects-dark {
+  background: #E6E4DF;
+  position: relative;
+  overflow: hidden;
+}
+
+.projects-dark::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  left: -120px;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(255, 92, 26, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.projects-dark .container {
+  position: relative;
+}
+
+.projects-dark .section-header h2 {
+  color: var(--ink);
+}
+
+.projects-dark .section-header p {
+  color: var(--text-light);
+}
+
+.projects-dark .project-card {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: var(--shadow-sm);
+}
+
+.projects-dark .project-card:hover {
+  border-color: rgba(255, 92, 26, 0.5);
 }
 
 .projects-grid {
@@ -976,7 +1015,7 @@ img {
 
 /* Testimonials (dark variant, homepage) */
 .testimonials-dark {
-  background: var(--ink);
+  background: linear-gradient(180deg, #FFE7D1 0%, #FFD4AF 100%);
   position: relative;
   overflow: hidden;
 }
@@ -988,7 +1027,7 @@ img {
   left: -120px;
   width: 480px;
   height: 480px;
-  background: radial-gradient(circle, rgba(255, 92, 26, 0.14) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(11, 14, 20, 0.06) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -997,11 +1036,11 @@ img {
 }
 
 .testimonials-dark .section-header h2 {
-  color: #fff;
+  color: var(--ink);
 }
 
 .testimonials-dark .section-header p {
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--text-light);
 }
 
 .testimonials-dark .testimonial-card {
