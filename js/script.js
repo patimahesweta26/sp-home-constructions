@@ -12,16 +12,53 @@ window.addEventListener('scroll', () => {
 const hamburger = document.getElementById('hamburger');
 const nav = document.getElementById('nav');
 
+// Scroll lock (position-fixed pattern avoids the body{overflow:hidden}
+// scroll-position desync that breaks wheel-up scrolling in Chrome)
+let scrollLockCount = 0;
+let savedScrollY = 0;
+
+function lockScroll() {
+  if (scrollLockCount === 0) {
+    savedScrollY = window.scrollY;
+    document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.top = '-' + savedScrollY + 'px';
+    document.body.style.left = '0';
+    document.body.style.width = '100%';
+  }
+  scrollLockCount++;
+}
+
+function unlockScroll() {
+  scrollLockCount = Math.max(0, scrollLockCount - 1);
+  if (scrollLockCount === 0) {
+    document.body.style.overflow = '';
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.left = '';
+    document.body.style.width = '';
+    window.scrollTo(0, savedScrollY);
+  }
+}
+
 function closeNav() {
   hamburger.classList.remove('active');
   nav.classList.remove('active');
-  document.body.style.overflow = '';
+  unlockScroll();
 }
 
 hamburger.addEventListener('click', () => {
+  if (typeof lightbox !== 'undefined' && lightbox && lightbox.classList.contains('open')) {
+    closeLightbox();
+  }
+  const opening = !nav.classList.contains('active');
   hamburger.classList.toggle('active');
   nav.classList.toggle('active');
-  document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+  if (opening) {
+    lockScroll();
+  } else {
+    unlockScroll();
+  }
 });
 
 // Close when clicking nav backdrop
@@ -154,4 +191,63 @@ contactForm.addEventListener('submit', function(e) {
   btn.disabled = false;
   this.reset();
 });
+}
+
+// Projects lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxCaption = document.getElementById('lightboxCaption');
+const lightboxClose = document.getElementById('lightboxClose');
+const lightboxPrev = document.getElementById('lightboxPrev');
+const lightboxNext = document.getElementById('lightboxNext');
+
+let lightboxItems = [];
+let lightboxIndex = 0;
+
+function openLightbox(index) {
+  if (!lightbox || !lightboxItems.length) return;
+  lightboxIndex = (index + lightboxItems.length) % lightboxItems.length;
+  const item = lightboxItems[lightboxIndex];
+  lightboxImg.src = item.src;
+  lightboxImg.alt = item.alt;
+  lightboxCaption.textContent = item.caption;
+  lightbox.classList.add('open');
+  lockScroll();
+}
+
+function closeLightbox() {
+  if (!lightbox) return;
+  lightbox.classList.remove('open');
+  unlockScroll();
+}
+
+if (lightbox) {
+  lightboxItems = Array.from(document.querySelectorAll('.project-card')).map(card => {
+    const img = card.querySelector('.project-img img');
+    const h3 = card.querySelector('.project-overlay h3');
+    const p = card.querySelector('.project-overlay p');
+    return {
+      src: img.src,
+      alt: img.alt,
+      caption: [h3.textContent, p.textContent].filter(Boolean).join(' — ')
+    };
+  });
+
+  document.querySelectorAll('.project-card').forEach((card, i) => {
+    card.addEventListener('click', () => openLightbox(i));
+  });
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  lightboxPrev.addEventListener('click', () => openLightbox(lightboxIndex - 1));
+  lightboxNext.addEventListener('click', () => openLightbox(lightboxIndex + 1));
+
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') openLightbox(lightboxIndex - 1);
+    if (e.key === 'ArrowRight') openLightbox(lightboxIndex + 1);
+  });
 }
