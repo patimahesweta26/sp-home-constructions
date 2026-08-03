@@ -1831,7 +1831,11 @@ img {
 /* Mobile-first responsive */
 @media (max-width: 1024px) {
   .hero-photo {
-    display: none;
+    position: static;
+    transform: none;
+    margin: 0 auto 44px;
+    width: 220px;
+    height: 220px;
   }
 
   .hero-content h1 {
@@ -2260,6 +2264,13 @@ img {
   .hero-content p {
     font-size: 0.85rem;
     margin-bottom: 24px;
+  }
+
+  .hero-photo {
+    width: 170px;
+    height: 170px;
+    margin-bottom: 36px;
+    border-width: 4px;
   }
 
   .hero-actions .btn {
