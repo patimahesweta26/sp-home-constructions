@@ -35,6 +35,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/pages.css" />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -52,7 +53,7 @@
     }
     </script>
   </head>
-  <body>
+  <body class="page-services">
     <!-- Header -->
     <header class="header" id="header">
       <div class="container">
@@ -66,7 +67,7 @@
             <li><a href="about.html" target="_blank" rel="noopener">About</a></li>
             <li><a href="services.html" target="_blank" rel="noopener" class="active">Services</a></li>
             <li><a href="projects.html" target="_blank" rel="noopener">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html" target="_blank" rel="noopener">Contact</a></li>
           </ul>
         </nav>
         <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -75,77 +76,103 @@
       </div>
     </header>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
+    <!-- Blueprint Hero -->
+    <section class="svc-hero">
+      <span class="svc-corner svc-corner-tl"></span>
+      <span class="svc-corner svc-corner-tr"></span>
+      <span class="svc-corner svc-corner-bl"></span>
+      <span class="svc-corner svc-corner-br"></span>
       <div class="container">
         <p class="breadcrumb"><a href="index.html">Home</a> &rsaquo; Services</p>
+        <span class="svc-hero-tag"><i class="fas fa-drafting-compass"></i> Blueprint No. SP-001</span>
         <h1>Construction & Repair Services in Bhubaneswar</h1>
         <p>
-          Every aspect of home building and care, handled with expertise — from
-          first sketch to final finish.
+          Every aspect of home building and care, handled with engineering
+          precision — from the first sketch to the final finish.
         </p>
+        <div class="svc-hero-specs">
+          <a href="#svcList" class="svc-spec"><i class="fas fa-home"></i> Residential</a>
+          <a href="services/repair-maintenance.html" class="svc-spec"><i class="fas fa-building"></i> Commercial</a>
+          <a href="#svcList" class="svc-spec"><i class="fas fa-tasks"></i> 6 Core Services</a>
+          <a href="contact.html" class="svc-spec"><i class="fas fa-comments"></i> Free Consultation</a>
+        </div>
       </div>
     </section>
 
     <!-- Services -->
-    <section class="section services services-dark">
+    <section class="svc-list" id="svcList">
       <div class="container">
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-home"></i></div>
-            <h3>New Home Construction</h3>
-            <p>
-              End-to-end home building tailored to your vision, budget, and land
-              — from foundation to move-in ready.
-            </p>
-            <a href="services/home-construction.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-tools"></i></div>
-            <h3>Repair & Maintenance</h3>
-            <p>
-              Reliable repairs for plumbing, electrical, roofing, flooring, and
-              structural issues — residential and commercial.
-            </p>
-            <a href="services/repair-maintenance.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-          </div>
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-paint-roller"></i></div>
-            <h3>Renovation & Remodeling</h3>
-            <p>
-              Transform your space with modern renovations, kitchen and bath
-              remodeling, and structural improvements.
-            </p>
-            <a href="services/renovation.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-drafting-compass"></i>
+        <div class="section-header">
+          <span class="section-label">The Scope of Work</span>
+          <h2>Six Services, One Standard of Excellence</h2>
+          <p>Specified, measured, and delivered with care at every step</p>
+        </div>
+        <div class="svc-rows">
+          <div class="svc-row">
+            <div class="svc-row-icon"><i class="fas fa-home"></i></div>
+            <div class="svc-row-body">
+              <h3>New Home Construction</h3>
+              <p>
+                End-to-end home building tailored to your vision, budget, and land
+                — from foundation to move-in ready.
+              </p>
             </div>
-            <h3>Design & Planning</h3>
-            <p>
-              Professional architectural planning, structural design, and 3D
-              visualization before breaking ground.
-            </p>
-            <a href="services/design-planning.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            <a href="services/home-construction.html" class="svc-row-link">Learn More <i class="fas fa-arrow-right"></i></a>
           </div>
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
-            <h3>Waterproofing</h3>
-            <p>
-              Expert waterproofing for roofs, basements, terraces, and bathrooms
-              — protecting your home from Odisha's monsoon.
-            </p>
-            <a href="services/waterproofing.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          <div class="svc-row">
+            <div class="svc-row-icon"><i class="fas fa-tools"></i></div>
+            <div class="svc-row-body">
+              <h3>Repair & Maintenance</h3>
+              <p>
+                Reliable repairs for plumbing, electrical, roofing, flooring, and
+                structural issues — residential and commercial.
+              </p>
+            </div>
+            <a href="services/repair-maintenance.html" class="svc-row-link">Learn More <i class="fas fa-arrow-right"></i></a>
           </div>
-          <div class="service-card">
-            <div class="service-icon"><i class="fas fa-hard-hat"></i></div>
-            <h3>Project Consultation</h3>
-            <p>
-              Get expert advice on materials, budgeting, timelines, and
-              contractor coordination before you start.
-            </p>
-            <a href="services/project-consultation.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          <div class="svc-row">
+            <div class="svc-row-icon"><i class="fas fa-paint-roller"></i></div>
+            <div class="svc-row-body">
+              <h3>Renovation & Remodeling</h3>
+              <p>
+                Transform your space with modern renovations, kitchen and bath
+                remodeling, and structural improvements.
+              </p>
+            </div>
+            <a href="services/renovation.html" class="svc-row-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="svc-row">
+            <div class="svc-row-icon"><i class="fas fa-drafting-compass"></i></div>
+            <div class="svc-row-body">
+              <h3>Design & Planning</h3>
+              <p>
+                Professional architectural planning, structural design, and 3D
+                visualization before breaking ground.
+              </p>
+            </div>
+            <a href="services/design-planning.html" class="svc-row-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="svc-row">
+            <div class="svc-row-icon"><i class="fas fa-shield-alt"></i></div>
+            <div class="svc-row-body">
+              <h3>Waterproofing</h3>
+              <p>
+                Expert waterproofing for roofs, basements, terraces, and bathrooms
+                — protecting your home from Odisha's monsoon.
+              </p>
+            </div>
+            <a href="services/waterproofing.html" class="svc-row-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="svc-row">
+            <div class="svc-row-icon"><i class="fas fa-hard-hat"></i></div>
+            <div class="svc-row-body">
+              <h3>Project Consultation</h3>
+              <p>
+                Get expert advice on materials, budgeting, timelines, and
+                contractor coordination before you start.
+              </p>
+            </div>
+            <a href="services/project-consultation.html" class="svc-row-link">Learn More <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -160,7 +187,7 @@
           free consultation, no obligation.
         </p>
         <div class="cta-actions">
-          <a href="contact.html" class="btn btn-primary btn-lg">
+          <a href="contact.html" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
             <i class="fas fa-paper-plane"></i> Ask Us
           </a>
           <a
@@ -206,7 +233,7 @@
               <li><a href="about.html" target="_blank" rel="noopener">About Us</a></li>
               <li><a href="services.html" target="_blank" rel="noopener">Services</a></li>
               <li><a href="projects.html" target="_blank" rel="noopener">Projects</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="contact.html" target="_blank" rel="noopener">Contact</a></li>
             </ul>
           </div>
           <div class="footer-links">

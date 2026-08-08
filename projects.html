@@ -35,6 +35,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/pages.css" />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -50,7 +51,7 @@
     }
     </script>
   </head>
-  <body>
+  <body class="page-projects">
     <!-- Header -->
     <header class="header" id="header">
       <div class="container">
@@ -64,7 +65,7 @@
             <li><a href="about.html" target="_blank" rel="noopener">About</a></li>
             <li><a href="services.html" target="_blank" rel="noopener">Services</a></li>
             <li><a href="projects.html" target="_blank" rel="noopener" class="active">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html" target="_blank" rel="noopener">Contact</a></li>
           </ul>
         </nav>
         <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -73,23 +74,31 @@
       </div>
     </header>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
+    <!-- Gallery Hero -->
+    <section class="gal-hero">
+      <div class="gal-hero-bg"></div>
+      <div class="gal-hero-overlay"></div>
       <div class="container">
         <p class="breadcrumb"><a href="index.html">Home</a> &rsaquo; Projects</p>
-        <h1>Our Construction Projects in Bhubaneswar</h1>
+        <h1>Our Work <span>Speaks</span> For Itself</h1>
         <p>
-          Each project reflects our commitment to quality and client
-          satisfaction.
+          A gallery of homes, renovations, and builds across Bhubaneswar — each
+          one a reflection of our commitment to quality.
         </p>
+        <div class="gal-filters" id="galFilters">
+          <button class="gal-filter active" data-filter="all">All Projects</button>
+          <button class="gal-filter" data-filter="construction">Construction</button>
+          <button class="gal-filter" data-filter="renovation">Renovation</button>
+          <button class="gal-filter" data-filter="waterproofing">Waterproofing</button>
+        </div>
       </div>
     </section>
 
-    <!-- Projects -->
-    <section class="section projects">
+    <!-- Masonry Gallery -->
+    <section class="gal-masonry">
       <div class="container">
-        <div class="projects-grid">
-          <div class="project-card">
+        <div class="gal-grid" id="galGrid">
+          <div class="project-card gal-h-2" data-category="construction">
             <div class="project-img">
               <img
                 src="images/project-a.webp"
@@ -97,74 +106,66 @@
                 loading="lazy"
               />
             </div>
+            <span class="project-tag">Construction</span>
             <div class="project-overlay">
               <h3>Residential Construction</h3>
               <p>Bhubaneswar</p>
             </div>
           </div>
-          <div class="project-card">
+          <div class="project-card gal-h-1" data-category="renovation">
             <div class="project-img">
               <img
-                src="images/project-b.webp"
-                alt="Home construction work in Bhubaneswar by SP Home Constructions"
+                src="images/about-1.webp"
+                alt="Renovation project by SP Home Constructions in Bhubaneswar"
                 loading="lazy"
               />
             </div>
+            <span class="project-tag">Renovation</span>
+            <div class="project-overlay">
+              <h3>Home Renovation</h3>
+              <p>Jagamara</p>
+            </div>
+          </div>
+          <div class="project-card gal-h-1" data-category="waterproofing">
+            <div class="project-img">
+              <img
+                src="images/about-2.webp"
+                alt="Waterproofing work by SP Home Constructions in Bhubaneswar"
+                loading="lazy"
+              />
+            </div>
+            <span class="project-tag">Waterproofing</span>
+            <div class="project-overlay">
+              <h3>Terrace Waterproofing</h3>
+              <p>Bhubaneswar</p>
+            </div>
+          </div>
+          <div class="project-card gal-h-2" data-category="construction">
+            <div class="project-img">
+              <img
+                src="images/project-b.webp"
+                alt="Home construction work by SP Home Constructions in Bhubaneswar"
+                loading="lazy"
+              />
+            </div>
+            <span class="project-tag">Construction</span>
             <div class="project-overlay">
               <h3>Home Construction</h3>
               <p>Bhubaneswar</p>
             </div>
           </div>
-          <div class="project-card">
+          <div class="project-card gal-h-2" data-category="waterproofing">
             <div class="project-img">
               <img
                 src="images/project-c.webp"
-                alt="Construction project site managed by SP Home Constructions Bhubaneswar"
+                alt="Waterproofing project by SP Home Constructions in Bhubaneswar"
                 loading="lazy"
               />
             </div>
+            <span class="project-tag">Waterproofing</span>
             <div class="project-overlay">
-              <h3>Construction Project</h3>
+              <h3>Basement Sealing</h3>
               <p>Bhubaneswar</p>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="project-img">
-              <img
-                src="images/about-1.webp"
-                alt="Building work by SP Home Constructions in Bhubaneswar"
-                loading="lazy"
-              />
-            </div>
-            <div class="project-overlay">
-              <h3>Building Work</h3>
-              <p>Bhubaneswar</p>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="project-img">
-              <img
-                src="images/about-2.webp"
-                alt="Renovation project by SP Home Constructions in Bhubaneswar"
-                loading="lazy"
-              />
-            </div>
-            <div class="project-overlay">
-              <h3>Renovation Work</h3>
-              <p>Bhubaneswar</p>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="project-img">
-              <img
-                src="images/hero-bg.webp"
-                alt="New home build by SP Home Constructions, Khandagiri Bhubaneswar"
-                loading="lazy"
-              />
-            </div>
-            <div class="project-overlay">
-              <h3>New Home Build</h3>
-              <p>Khandagiri</p>
             </div>
           </div>
         </div>
@@ -197,7 +198,7 @@
           honest advice.
         </p>
         <div class="cta-actions">
-          <a href="contact.html" class="btn btn-primary btn-lg">
+          <a href="contact.html" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
             <i class="fas fa-paper-plane"></i> Start Your Project
           </a>
           <a
@@ -243,7 +244,7 @@
               <li><a href="about.html" target="_blank" rel="noopener">About Us</a></li>
               <li><a href="services.html" target="_blank" rel="noopener">Services</a></li>
               <li><a href="projects.html" target="_blank" rel="noopener">Projects</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="contact.html" target="_blank" rel="noopener">Contact</a></li>
             </ul>
           </div>
           <div class="footer-links">

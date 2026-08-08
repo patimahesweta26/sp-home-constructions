@@ -125,7 +125,7 @@ function animateCounter(element) {
 }
 
 // Intersection Observer for stats
-const statsSection = document.querySelector('.hero-stats');
+const statsSection = document.querySelector('.hero-stats, .about-hero-stats');
 let statsAnimated = false;
 
 const statsObserver = new IntersectionObserver((entries) => {
@@ -143,7 +143,7 @@ if (statsSection) {
 
 // Fade-in on scroll
 const fadeElements = document.querySelectorAll(
-  '.about-grid, .service-card, .project-card, .testimonial-card, .contact-grid'
+  '.about-grid, .service-card, .project-card, .testimonial-card, .contact-grid, .section-header, .cta-banner'
 );
 
 const fadeObserver = new IntersectionObserver((entries) => {
@@ -222,6 +222,26 @@ contactForm.addEventListener('submit', function(e) {
 });
 }
 
+// Projects gallery filter
+const galFilters = document.getElementById('galFilters');
+const galCards = document.querySelectorAll('.gal-grid .project-card');
+
+if (galFilters && galCards.length) {
+  const filterButtons = galFilters.querySelectorAll('.gal-filter');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      galCards.forEach(card => {
+        const show = filter === 'all' || card.dataset.category === filter;
+        card.style.display = show ? '' : 'none';
+      });
+    });
+  });
+}
+
 // Projects lightbox
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightboxImg');
@@ -280,3 +300,28 @@ if (lightbox) {
     if (e.key === 'ArrowRight') openLightbox(lightboxIndex + 1);
   });
 }
+
+// Expandable "Why Choose Us" cards (about page)
+document.querySelectorAll('.page-about .value-card').forEach(card => {
+  card.addEventListener('click', () => {
+    card.classList.toggle('open');
+    card.setAttribute('aria-expanded', card.classList.contains('open'));
+  });
+  card.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      card.click();
+    }
+  });
+});
+
+// FAQ accordion: keep only one question open at a time
+document.querySelectorAll('details.faq-item').forEach(item => {
+  item.addEventListener('toggle', () => {
+    if (!item.open) return;
+    const scope = item.closest('.container') || item.parentElement;
+    scope.querySelectorAll('details.faq-item').forEach(sib => {
+      if (sib !== item) sib.open = false;
+    });
+  });
+});

@@ -35,6 +35,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/pages.css" />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -73,7 +74,7 @@
     }
     </script>
   </head>
-  <body>
+  <body class="page-contact">
     <!-- Header -->
     <header class="header" id="header">
       <div class="container">
@@ -87,7 +88,7 @@
             <li><a href="about.html" target="_blank" rel="noopener">About</a></li>
             <li><a href="services.html" target="_blank" rel="noopener">Services</a></li>
             <li><a href="projects.html" target="_blank" rel="noopener">Projects</a></li>
-            <li><a href="contact.html" class="active">Contact</a></li>
+            <li><a href="contact.html" target="_blank" rel="noopener" class="active">Contact</a></li>
           </ul>
         </nav>
         <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -96,69 +97,67 @@
       </div>
     </header>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
+    <!-- Contact Split -->
+    <section class="contact-hero">
       <div class="container">
-        <p class="breadcrumb"><a href="index.html">Home</a> &rsaquo; Contact</p>
-        <h1>Contact SP Home Constructions</h1>
-        <p>
-          Whether you're planning a new home, renovation, or need repairs —
-          we're here to help.
-        </p>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="section contact">
-      <div class="container">
-        <div class="contact-grid">
-          <div class="contact-info">
+        <p class="breadcrumb breadcrumb-light"><a href="index.html">Home</a> &rsaquo; Contact</p>
+        <div class="contact-split">
+          <div class="contact-panel">
             <span class="section-label">Get in Touch</span>
-            <h2>Let's Discuss Your Project</h2>
+            <h2>Let's build your dream, <em>together</em></h2>
             <p>
-              Send us a message or call directly — we respond quickly during
+              Whether you're planning a new home, renovation, or need repairs —
+              send us a message or call directly. We respond quickly during
               working hours.
             </p>
-            <div class="contact-details">
-              <div class="contact-item">
-                <div class="contact-icon">
-                  <i class="fas fa-map-marker-alt"></i>
-                </div>
+            <ul class="contact-panel-list">
+              <li class="contact-panel-item">
+                <i class="fas fa-map-marker-alt"></i>
                 <div>
                   <h4>Visit Us</h4>
                   <p>
-                    Plot 1578/2433, Ln 6, Khandagiri<br />Bhaktamadhu Nagar,
-                    Jagamara<br />Bhubaneswar, Odisha 751030
+                    Plot 1578/2433, Ln 6, Bhaktamadhu Nagar,<br />Jagamara,
+                    Khandagiri<br />Bhubaneswar, Odisha 751030
                   </p>
                 </div>
-              </div>
-              <div class="contact-item">
-                <div class="contact-icon"><i class="fas fa-phone"></i></div>
+              </li>
+              <li class="contact-panel-item">
+                <i class="fas fa-phone"></i>
                 <div>
                   <h4>Call or WhatsApp</h4>
                   <a href="tel:+919937994806">+91 99379 94806</a>
                 </div>
-              </div>
-              <div class="contact-item">
-                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              </li>
+              <li class="contact-panel-item">
+                <i class="fas fa-envelope"></i>
                 <div>
                   <h4>Email</h4>
                   <a href="mailto:patimahesweta26@gmail.com">patimahesweta26@gmail.com</a>
                 </div>
-              </div>
-              <div class="contact-item">
-                <div class="contact-icon"><i class="fas fa-clock"></i></div>
+              </li>
+              <li class="contact-panel-item">
+                <i class="fas fa-clock"></i>
                 <div>
                   <h4>Working Hours</h4>
-                  <p>
-                    Mon–Sat: 8:00 AM – 8:00 PM<br />Sunday: 9:00 AM – 7:00 PM
-                  </p>
+                  <p>Mon–Sat: 8:00 AM – 8:00 PM<br />Sunday: 9:00 AM – 7:00 PM</p>
                 </div>
-              </div>
+              </li>
+            </ul>
+            <div class="contact-panel-actions">
+              <a href="tel:+919937994806" class="btn btn-call">
+                <i class="fas fa-phone"></i> Call Now
+              </a>
+              <a
+                href="https://wa.me/919937994806"
+                target="_blank"
+                class="btn btn-whatsapp"
+              >
+                <i class="fab fa-whatsapp"></i> WhatsApp
+              </a>
             </div>
           </div>
-          <form class="contact-form" id="contactForm">
-            <h3>Send Us a Message</h3>
+          <form class="contact-form-wrap" id="contactForm">
+            <span class="form-title">Send Us a Message</span>
             <div class="form-row">
               <input type="text" placeholder="Your Name" required />
               <input type="tel" placeholder="Phone Number" required />
@@ -184,6 +183,25 @@
             <div id="formStatus" class="form-status" role="status"></div>
           </form>
         </div>
+      </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="contact-strip">
+      <div class="container">
+        <a href="tel:+919937994806" class="contact-strip-item">
+          <i class="fas fa-phone"></i> Call +91 99379 94806
+        </a>
+        <a
+          href="https://wa.me/919937994806"
+          target="_blank"
+          class="contact-strip-item"
+        >
+          <i class="fab fa-whatsapp"></i> WhatsApp Us
+        </a>
+        <a href="mailto:patimahesweta26@gmail.com" class="contact-strip-item">
+          <i class="fas fa-envelope"></i> Email Us
+        </a>
       </div>
     </section>
 
@@ -230,7 +248,7 @@
               <li><a href="about.html" target="_blank" rel="noopener">About Us</a></li>
               <li><a href="services.html" target="_blank" rel="noopener">Services</a></li>
               <li><a href="projects.html" target="_blank" rel="noopener">Projects</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="contact.html" target="_blank" rel="noopener">Contact</a></li>
             </ul>
           </div>
           <div class="footer-links">

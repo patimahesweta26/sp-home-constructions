@@ -35,6 +35,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/pages.css" />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -59,7 +60,7 @@
     }
     </script>
   </head>
-  <body>
+  <body class="page-about">
     <!-- Header -->
     <header class="header" id="header">
       <div class="container">
@@ -73,7 +74,7 @@
             <li><a href="about.html" target="_blank" rel="noopener" class="active">About</a></li>
             <li><a href="services.html" target="_blank" rel="noopener">Services</a></li>
             <li><a href="projects.html" target="_blank" rel="noopener">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html" target="_blank" rel="noopener">Contact</a></li>
           </ul>
         </nav>
         <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -82,70 +83,163 @@
       </div>
     </header>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
+    <!-- About Hero -->
+    <section class="about-hero">
       <div class="container">
-        <p class="breadcrumb"><a href="index.html">Home</a> &rsaquo; About Us</p>
-        <h1>About SP Home Constructions</h1>
-        <p>
-          A family-run construction and repair company building trust across
-          Bhubaneswar for over a decade.
-        </p>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section class="section about">
-      <div class="container">
-        <div class="about-grid">
-          <div class="about-visual">
-            <div class="about-image-main">
+        <div class="about-hero-grid">
+          <div class="about-hero-text">
+            <p class="breadcrumb"><a href="index.html">Home</a> &rsaquo; About Us</p>
+            <span class="section-label">Our Story</span>
+            <h1>Building homes that last <em>generations</em></h1>
+            <p>
+              A family-run construction and repair company in Khandagiri,
+              Bhubaneswar — crafting quality homes with honesty and care for
+              over a decade.
+            </p>
+            <div class="about-hero-actions">
+              <a href="contact.html" target="_blank" rel="noopener" class="btn btn-primary">
+                Start Your Project
+              </a>
+              <a href="tel:+919937994806" class="btn btn-ghost">
+                <i class="fas fa-phone"></i> +91 99379 94806
+              </a>
+            </div>
+            <div class="about-hero-stats">
+              <div class="about-hero-stat">
+                <span class="stat-number" data-count="50">0</span>
+                <span class="stat-label">Projects Completed</span>
+              </div>
+              <div class="about-hero-stat">
+                <span class="stat-number" data-count="10">0</span>
+                <span class="stat-label">Years Experience</span>
+              </div>
+              <div class="about-hero-stat">
+                <span class="stat-number" data-count="100">0</span>
+                <span class="stat-label">Happy Clients</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-hero-visual">
+            <div class="about-hero-img-main">
               <img
                 src="images/about-1.webp"
                 alt="SP Home Constructions residential project in Bhubaneswar"
               />
             </div>
-            <div class="about-image-accent">
-              <img src="images/about-2.webp" alt="Construction detail by SP Home Constructions" />
+            <div class="about-hero-img-accent">
+              <img src="images/about-2.webp" alt="Construction detail work by SP Home Constructions" />
+            </div>
+            <div class="about-hero-badge">
+              <strong>10+</strong>
+              <span>Years of<br />Craft</span>
             </div>
           </div>
-          <div class="about-text">
-            <span class="section-label">Our Story</span>
-            <h2>Crafting Bhubaneswar's Finest Homes for Over a Decade</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story -->
+    <section class="about-story">
+      <div class="container">
+        <div class="about-story-grid">
+          <div class="about-story-visual">
+            <img
+              src="images/hero-bg.webp"
+              alt="Construction site work by SP Home Constructions in Bhubaneswar"
+            />
+          </div>
+          <div class="about-story-text">
+            <span class="section-label">Who We Are</span>
+            <h2>A small family venture that grew into Bhubaneswar's trusted name</h2>
             <p>
-              SP Home Constructions started as a small family-run venture in
-              Khandagiri, Bhubaneswar with one simple belief: build every home
-              as if it were your own. Over the years, that belief has grown
-              into one of the area's most trusted construction and repair
-              companies.
+              SP Home Constructions started with one simple belief: build every
+              home as if it were our own. From that first project in Khandagiri,
+              we've grown into a construction and repair company that homeowners
+              across Bhubaneswar rely on — without ever losing our family
+              warmth.
             </p>
             <p>
               We specialize in residential construction, renovations, and
-              property maintenance — delivering quality workmanship that
-              stands the test of Odisha's demanding climate. From modern
-              new-home builds to emergency repairs, our team brings the same
-              care and precision to every project.
+              property maintenance. From modern new-home builds to emergency
+              repairs, our team brings the same care and precision to every
+              project — built on transparency, integrity, and a deep commitment
+              to client satisfaction.
             </p>
-            <p>
-              Every project we undertake is built on transparency, integrity,
-              and a deep commitment to client satisfaction. We don't just
-              build structures — we build lasting relationships with every
-              homeowner we serve.
-            </p>
-            <div class="about-features">
-              <div class="feature">
+            <blockquote>
+              "We don't just build structures — we build lasting relationships
+              with every homeowner we serve."
+            </blockquote>
+            <div class="about-story-features">
+              <div class="about-story-feature">
                 <i class="fas fa-certificate"></i>
                 <span>Licensed & Insured</span>
               </div>
-              <div class="feature">
+              <div class="about-story-feature">
                 <i class="fas fa-clock"></i>
                 <span>On-Time Delivery</span>
               </div>
-              <div class="feature">
+              <div class="about-story-feature">
                 <i class="fas fa-hand-holding-usd"></i>
                 <span>Transparent Pricing</span>
               </div>
+              <div class="about-story-feature">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Khandagiri, Bhubaneswar</span>
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Milestones -->
+    <section class="about-milestones">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Milestones</span>
+          <h2>A Decade of Building Trust</h2>
+          <p>The key moments that shaped our journey</p>
+        </div>
+        <div class="milestone-list">
+          <div class="milestone">
+            <span class="milestone-year">2015</span>
+            <h3>One Family, One Van, One Belief</h3>
+            <p>
+              SP Home Constructions was founded in Khandagiri with a small team
+              and a single promise — quality work at honest prices.
+            </p>
+          </div>
+          <div class="milestone">
+            <span class="milestone-year">2018</span>
+            <h3>Twenty-Five Homes Standing Strong</h3>
+            <p>
+              Word spread across Jagamara and beyond as we completed our 25th
+              residential project, all still standing strong today.
+            </p>
+          </div>
+          <div class="milestone">
+            <span class="milestone-year">2021</span>
+            <h3>Expanding Into Repairs & Renovation</h3>
+            <p>
+              Homeowners trusted us with their existing homes — repairs,
+              waterproofing, and complete renovations across Bhubaneswar.
+            </p>
+          </div>
+          <div class="milestone">
+            <span class="milestone-year">2024</span>
+            <h3>100 Happy Clients & Counting</h3>
+            <p>
+              Rated 4.8 by the families we've served, built entirely on
+              referrals and lasting relationships.
+            </p>
+          </div>
+          <div class="milestone">
+            <span class="milestone-year">2026</span>
+            <h3>Still Building, Still Family-Run</h3>
+            <p>
+              Today we build homes for a second generation of families — with
+              the same values we started with.
+            </p>
           </div>
         </div>
       </div>
@@ -159,59 +253,83 @@
           <h2>The Values Behind Every Build</h2>
         </div>
         <div class="values-grid">
-          <div class="value-card">
-            <span class="value-num">01</span>
+          <div class="value-card" tabindex="0" role="button" aria-expanded="false">
             <div class="value-icon"><i class="fas fa-gem"></i></div>
-            <h3>Quality Craftsmanship</h3>
-            <p>
-              We use quality materials and proven techniques so your home
-              stands strong for generations.
-            </p>
+            <div class="value-head">
+              <h3>Quality Craftsmanship</h3>
+              <i class="fas fa-plus value-toggle"></i>
+            </div>
+            <div class="value-body">
+              <p>
+                We use quality materials and proven techniques so your home
+                stands strong for generations.
+              </p>
+            </div>
           </div>
-          <div class="value-card">
-            <span class="value-num">02</span>
+          <div class="value-card" tabindex="0" role="button" aria-expanded="false">
             <div class="value-icon"><i class="fas fa-handshake"></i></div>
-            <h3>Transparent Pricing</h3>
-            <p>
-              Clear, honest quotations with no hidden costs. You know exactly
-              what you're paying for.
-            </p>
+            <div class="value-head">
+              <h3>Transparent Pricing</h3>
+              <i class="fas fa-plus value-toggle"></i>
+            </div>
+            <div class="value-body">
+              <p>
+                Clear, honest quotations with no hidden costs. You know exactly
+                what you're paying for.
+              </p>
+            </div>
           </div>
-          <div class="value-card">
-            <span class="value-num">03</span>
+          <div class="value-card" tabindex="0" role="button" aria-expanded="false">
             <div class="value-icon"><i class="fas fa-calendar-check"></i></div>
-            <h3>On-Time Delivery</h3>
-            <p>
-              We respect your timeline and deliver projects on schedule,
-              without compromising quality.
-            </p>
+            <div class="value-head">
+              <h3>On-Time Delivery</h3>
+              <i class="fas fa-plus value-toggle"></i>
+            </div>
+            <div class="value-body">
+              <p>
+                We respect your timeline and deliver projects on schedule,
+                without compromising quality.
+              </p>
+            </div>
           </div>
-          <div class="value-card">
-            <span class="value-num">04</span>
+          <div class="value-card" tabindex="0" role="button" aria-expanded="false">
             <div class="value-icon"><i class="fas fa-comments"></i></div>
-            <h3>Clear Communication</h3>
-            <p>
-              Regular updates and open lines of contact from first visit to
-              final handover.
-            </p>
+            <div class="value-head">
+              <h3>Clear Communication</h3>
+              <i class="fas fa-plus value-toggle"></i>
+            </div>
+            <div class="value-body">
+              <p>
+                Regular updates and open lines of contact from first visit to
+                final handover.
+              </p>
+            </div>
           </div>
-          <div class="value-card">
-            <span class="value-num">05</span>
+          <div class="value-card" tabindex="0" role="button" aria-expanded="false">
             <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
-            <h3>Licensed & Insured</h3>
-            <p>
-              Fully licensed and insured workmanship gives you complete peace
-              of mind.
-            </p>
+            <div class="value-head">
+              <h3>Licensed & Insured</h3>
+              <i class="fas fa-plus value-toggle"></i>
+            </div>
+            <div class="value-body">
+              <p>
+                Fully licensed and insured workmanship gives you complete peace
+                of mind.
+              </p>
+            </div>
           </div>
-          <div class="value-card">
-            <span class="value-num">06</span>
+          <div class="value-card" tabindex="0" role="button" aria-expanded="false">
             <div class="value-icon"><i class="fas fa-heart"></i></div>
-            <h3>Client Satisfaction</h3>
-            <p>
-              Rated 4.8 by homeowners across Bhubaneswar — our reputation is
-              built on happy clients.
-            </p>
+            <div class="value-head">
+              <h3>Client Satisfaction</h3>
+              <i class="fas fa-plus value-toggle"></i>
+            </div>
+            <div class="value-body">
+              <p>
+                Rated 4.8 by homeowners across Bhubaneswar — our reputation is
+                built on happy clients.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -226,7 +344,7 @@
           without obligation.
         </p>
         <div class="cta-actions">
-          <a href="contact.html" class="btn btn-primary btn-lg">
+          <a href="contact.html" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
             <i class="fas fa-paper-plane"></i> Get a Free Quote
           </a>
           <a
@@ -272,7 +390,7 @@
               <li><a href="about.html" target="_blank" rel="noopener">About Us</a></li>
               <li><a href="services.html" target="_blank" rel="noopener">Services</a></li>
               <li><a href="projects.html" target="_blank" rel="noopener">Projects</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="contact.html" target="_blank" rel="noopener">Contact</a></li>
             </ul>
           </div>
           <div class="footer-links">
